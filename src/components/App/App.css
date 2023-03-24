@@ -19,12 +19,13 @@ img {
 }
 .container{
   display: flex;
-  margin: 25px 0;
+  margin: 75px 0;
 }
 
 .conatainer2{
   display: flex;
-  margin: 25px 0;
+  margin: 100px 0;
+  
 }
 
 .img1 { flex: 1.0; }
@@ -32,4 +33,5 @@ img {
 .img3 { flex: 1.0; }
 .img4 { flex: 1.0; }
 .img5 { flex: 1.0; }
+.img6 { flex: 1.0; }
 
