@@ -29,8 +29,19 @@ function App() {
         console.log('Error on get:', error);
       });
   } 
-
-
+//i am passing this put function as a prop
+  const likeGallery = (id) => {
+    console.log(`In buyItem working on ID#:`, id);
+    axios.put(`/gallery/like/${id}`)
+    .then(response => {
+        console.log(`Item ID: ${id} marks the likes`);
+        fetchGalleryList()
+    })
+        .catch(err => {
+            alert('error in PUT Route in buyItem');
+            console.log(`error:`, err);
+        })
+}
 
 
   useEffect( () => {
@@ -43,19 +54,9 @@ function App() {
           <h1 className="App-title">Gallery of My Life</h1>
         </header>
         <p>Gallery goes here</p>
-        {/* container 1 for first row of images */}
-<GalleryList list={galleryList}/>
-        {/* <div class='container'>
-         <div class='img1'><img src="images/goat_small.jpg"/></div> 
-         <div class='img2'><img src="images/EGA_Small.jpeg"/></div>
-          <div class='img3'><img src="images/breading_Small.jpeg"/></div>
-          </div>  
-          {/* container 2 for second row of images */}
-        {/* <div class='conatainer2'>
-          <div class='img4'> <img src="images/mem_Small.jpeg"/> </div>
-          <div class='img5'> <img src="images/drawing_small.jpeg"/> </div>
-          <div class='img6'> <img src="images/pizzadog_Small.jpeg"/> </div>
-      </div> */} 
+   {/* like={likeGallery} is passing the function as a prop */}
+<GalleryList list={galleryList} like={likeGallery}/>
+
       </div>
     );
 }
