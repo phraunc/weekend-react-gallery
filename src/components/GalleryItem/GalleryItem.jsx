@@ -28,6 +28,6 @@ return (
 </>
 )
 }
-
+// I dont know why my pictures are not rendering with the CSS properties i input in line 20.  
 
 export default GalleryItem;
